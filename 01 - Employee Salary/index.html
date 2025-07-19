@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Employee Salary Calculator</title>
+</head>
+<body>
+  <div class="container">
+    <form class="wrapper" method="post" id="salary-form">
+      <label for="employee-name">Employee Name</label>
+      <input type="text" name="employee-name" id="employee-name"  />
+
+      <label for="position">Position</label>
+      <select name="position" id="position" >
+        <option value="">SELECT POSITION</option>
+        <option value="Manager">Manager</option>
+        <option value="Staff">Staff</option>
+        <option value="Intern">Intern</option>
+      </select>
+
+      <label for="working-hours">Working Hours</label>
+      <input type="number" name="working-hours" id="working-hours"   />
+
+      <button type="submit">Submit</button>
+      <input type="text" id="search" placeholder="Search by name..." />	
+       <div id="result">
+       	
+       </div>
+    </form>
+
+   
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
