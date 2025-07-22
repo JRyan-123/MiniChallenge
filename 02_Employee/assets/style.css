@@ -1,0 +1,69 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+/*layout*/
+body{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: lightblue;
+}
+.container{
+	width: 1000px;
+	display: flex;
+	gap: 10%;
+}
+.table-container{
+	width: 65%;
+}
+.employee-container{
+	width: 30%;
+}
+.add-form-container{
+	
+}
+.edit-form-container{
+	
+}
+.hidden{
+	display: none;
+}
+
+
+/*table*/
+ table { 
+ 	border-collapse: collapse; 
+ 	width: 700px; 
+ }
+th, td { 
+    border: 1px solid #ccc;
+    padding: 8px; 
+}
+th { 
+	background: #f0f0f0; 
+}
+tr:hover{
+	background: lightcyan;
+}
+
+/*form*/
+
+input, select, label, button{
+	padding: 10px;
+	border-radius: 10px;
+	border: none;
+	width: 100%;
+	margin: 5px;
+}
+button{
+	background: lightcyan;
+}
+button:hover{
+	background: lightcoral;
+}
