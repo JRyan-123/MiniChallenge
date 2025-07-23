@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Product-Inventory</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1>PRODUCT INVENTORY</h1>
+		<input type="text" id="search" placeholder="search for product">
+		<form id="add-form">
+			<h1>Add New Product</h1>
+			<input type="text" name="name" placeholder="Enter product name" required>
+			<input type="text" name="category" placeholder="Enter category" required>
+			<input type="number" name="stock" placeholder="Enter stock" required>
+			<button type="submit" id="submit-add">Add product</button>
+		</form>
+		<form id="edit-form" class="hidden">
+			<h1>Edit Product</h1>
+			<input type="text" name="name" placeholder="Enter product name">
+			<input type="text" name="category" placeholder="Enter category">
+			<input type="number" name="stock" placeholder="Enter stock">
+			<input type="hidden" name="id" >
+			<button type="submit" id="submit-edit">Edit product</button>
+				
+			<input type="button" id="add-new" value="+">
+
+		</form>
+
+		<div class="table-container">
+			<table id="product-table">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Product Name</th>
+						<th>Category</th>
+						<th>Stock</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+			<div id="pagination"></div>
+		</div>	
+	</div>
+	<script type="module" src="Controller/init.js"></script>
+</body>
+</html>
