@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Employee Management</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		
+
+		<div class="table-container">
+			<input type="text" name="keyword" id="keyword" placeholder="search for a name...">
+			<button id="show-add-form">Add Employee</button>
+			<table class="employee-table" id="employeeTable">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Position</th>
+						<th>Age</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+			<div id="page-btn"></div>
+		</div>
+
+		<!-- Edit Form -->
+		<div class="edit-form-container hidden">
+			<h1>Edit Employee</h1>
+			<form id="edit-form">
+				<input type="hidden" name="id" data-key="id" id="id">
+
+				<label>Name</label>
+				<input type="text" name="name" data-key="name" required>
+
+				<label>Position</label>
+				<select name="position" data-key="position" required>
+					<option value="">Select</option>
+					<option value="Manager">Manager</option>
+					<option value="Staff">Staff</option>
+					<option value="Intern">Intern</option>
+				</select>
+
+				<label>Age</label>
+				<input type="number" name="age" data-key="age" required>
+
+				<button type="submit">Update</button>
+				<button type="button" id="cancel-edit">Cancel</button>
+				<button type="button" id="delete-form">Delete</button>
+			</form>
+		</div>
+
+		<!-- Add Form -->
+		<div class="add-form-container hidden">
+			
+			<h1>Add Employee</h1>
+			<form id="add-form">
+				<input type="hidden" name="id" >
+
+				<label>Name</label>
+				<input type="text" name="name"  required>
+
+				<label>Position</label>
+				<select name="position"  required>
+					<option value="">Select</option>
+					<option value="Manager">Manager</option>
+					<option value="Staff">Staff</option>
+					<option value="Intern">Intern</option>
+				</select>
+
+				<label>Age</label>
+				<input type="number" name="age"  required>
+
+				<button type="submit">Add</button>
+				<button type="button" id="cancel-add">Cancel</button>
+				
+			</form>
+		
+		</div>
+
+	</div>
+
+	<script type="module" src="Controller/init.js"></script>
+	
+</body>
+</html>
