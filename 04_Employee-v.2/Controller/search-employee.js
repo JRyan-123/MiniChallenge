@@ -1,6 +1,5 @@
-import { loadEmployees } from './load-employees.js';
-import { displayPage } from './load-employees.js';
-import { setupPagination } from './load-employees.js';
+import { loadEmployees, displayPage, setupPagination } from './load-employees.js';
+
 
 let rowsPerPage = 3;
 let currentPage = 1;
@@ -22,3 +21,4 @@ export async function searchEmpployee() {
 		
  	});
 }
+//

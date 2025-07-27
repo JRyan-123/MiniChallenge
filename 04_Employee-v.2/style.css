@@ -69,3 +69,8 @@ button:hover{
 #page-btn button{
 	width: 30px;
 }
+#add-name-error , #add-age-error, 
+#edit-name-error , #edit-age-error{
+	color: red;
+
+}

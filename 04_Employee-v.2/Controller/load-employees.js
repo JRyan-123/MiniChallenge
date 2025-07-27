@@ -15,6 +15,7 @@ export async function loadEmployees() {
 
 }
 
+
 export function displayPage(data, page, rowsPerPage) {
 	const tbody = document.querySelector('.employee-table tbody');
 	tbody.innerHTML = "";
@@ -42,6 +43,9 @@ export function displayPage(data, page, rowsPerPage) {
 		tbody.appendChild(row);
 	});
 }
+
+
+
 export function setupPagination(data,  wrapper) {
 	wrapper.innerHTML = "";
 
@@ -72,3 +76,27 @@ export function setupPagination(data,  wrapper) {
 	});
 	return button;
 }
+//state globally currentpage, rows/page, datas
+//loademployee function
+//fetch data
+//call displaypage params data page and rows/page
+//call setuppagination params page and wrapper
+
+//display page
+//calculate start end to slice data
+//call setuppagination
+
+//setupPagination
+//wrapper innerhtml
+//ceil of data.length/ rows/page
+//for loop call pagination btn
+//append in wrapper
+
+//paginationbbtn params page
+//create a button innerhtml = page
+//default active page = current page
+//button click
+//currentpage = page 
+//call displaypage new params currenpage valur
+//remove prev active by removing it to all button
+//assign active to button self

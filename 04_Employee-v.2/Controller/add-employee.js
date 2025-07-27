@@ -1,4 +1,6 @@
 import { loadEmployees } from './load-employees.js';
+import { alertConfirm, alertShow } from './alert.js'
+import { validateAdd } from './validate-form.js'; 
 
 
 export async function addEmployee() {
@@ -22,7 +24,15 @@ export async function addEmployee() {
 	form.addEventListener("submit", async (e) => {
 		e.preventDefault();
 
+		
+
+
 		const formData = new FormData(form);
+		const errors = await validateAdd(formData);
+  		
+  		alertShow("error", errors.name + " \n " +  errors.age, "error")
+  		if (Object.keys(errors).length > 0) return;
+  	
 
 		const response = await fetch("Model/employee.php?action=add", {
 			method: "POST",
@@ -34,12 +44,12 @@ export async function addEmployee() {
 
 		if (result.success) {
 			addContainer.classList.add("hidden")
-			alert("success");
+			alertShow("Success", "successfully added", "success");
 			form.reset();
 			loadEmployees();
 		}
 		else{
-			alert("failed");
+			alertShow("Error", "Failed to add", "error");
 		}
 	});
 }

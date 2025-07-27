@@ -1,5 +1,7 @@
 
 import { loadEmployees } from './load-employees.js';
+import { alertConfirm, alertShow } from './alert.js'
+import { validateAdd, validateEdit } from './validate-form.js'; 
 
 
 export function editEmployee() {
@@ -15,6 +17,12 @@ export function editEmployee() {
 		e.preventDefault();
 
 		const formData = new FormData(form);
+		const errors = await validateEdit(formData);
+		alertShow("error", errors.name + " \n " +  errors.age, "error")
+	
+		if (Object.keys(errors).length > 0) return;
+
+
 		const id = document.getElementById('id').value;
 		try {
 			const res = await fetch('Model/employee.php?action=edit&id='+id, {
@@ -24,14 +32,14 @@ export function editEmployee() {
 			const result = await res.json();
 
 			if (result.success) {
-				alert('Updated successfully.');
+				alertShow("Update", "Updated successfully", "success");
 				document.querySelector('.edit-form-container').classList.add('hidden');
 				loadEmployees();
 			} else {
-				alert(result.message || 'Update failed.');
+				alertShow("Update", "Update failed", "error");
 			}
 		} catch (err) {
-			alert('Server error.');
+			alertShow("Error", "Update Error", "error");
 			
 		}
 	});

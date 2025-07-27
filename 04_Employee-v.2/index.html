@@ -34,7 +34,7 @@
 			<form id="edit-form">
 				<input type="hidden" name="id" data-key="id" id="id">
 
-				<label>Name</label>
+				<label>Name</label><small id="edit-name-error"></small>
 				<input type="text" name="name" data-key="name" required>
 
 				<label>Position</label>
@@ -45,7 +45,7 @@
 					<option value="Intern">Intern</option>
 				</select>
 
-				<label>Age</label>
+				<label>Age</label><small id="edit-age-error"></small>
 				<input type="number" name="age" data-key="age" required>
 
 				<button type="submit">Update</button>
@@ -61,8 +61,10 @@
 			<form id="add-form">
 				<input type="hidden" name="id" >
 
-				<label>Name</label>
+				<label>Name</label><small id="add-name-error"></small>
 				<input type="text" name="name"  required>
+				
+				<br>
 
 				<label>Position</label>
 				<select name="position"  required>
@@ -72,8 +74,9 @@
 					<option value="Intern">Intern</option>
 				</select>
 
-				<label>Age</label>
+				<label>Age</label><small id="add-age-error"></small>
 				<input type="number" name="age"  required>
+				
 
 				<button type="submit">Add</button>
 				<button type="button" id="cancel-add">Cancel</button>
@@ -85,6 +88,6 @@
 	</div>
 
 	<script type="module" src="Controller/init.js"></script>
-	
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
