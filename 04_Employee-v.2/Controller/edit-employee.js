@@ -18,7 +18,10 @@ export function editEmployee() {
 
 		const formData = new FormData(form);
 		const errors = await validateEdit(formData);
-		alertShow("error", errors.name + " \n " +  errors.age, "error")
+		let errorName = errors.name ?? '';
+		let errorAge = errors.age ?? '';
+
+		alertShow("error", errorName + " \n " +  errorAge, "error")
 	
 		if (Object.keys(errors).length > 0) return;
 

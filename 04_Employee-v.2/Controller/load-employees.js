@@ -26,7 +26,7 @@ export function displayPage(data, page, rowsPerPage) {
 
 	pageData.forEach(employee => {
 		const row = document.createElement('tr');
-
+		console.log(employee);
 		['id', 'name', 'position', 'age'].forEach(key => {
 			const td = document.createElement('td');
 			td.textContent = employee[key];
@@ -63,6 +63,7 @@ export function setupPagination(data,  wrapper) {
 	if (currentPage === page) {
 		button.classList.add("active");
 	}
+
 	button.addEventListener('click' , () => {
 		currentPage = page;
 		displayPage(employeeData, currentPage, rowsPerPage);
